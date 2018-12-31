@@ -4,6 +4,7 @@ CPP_DIR=src/cpp
 CROSS=$(HOME)/opt/cross/bin
 CXX=$(CROSS)/i686-elf-g++
 CC=$(CROSS)/i686-elf-gcc
+QEMU=qemu
 
 myos.bin: kernel.o boot.o linker.ld 
 	$(CC) -T linker.ld -o bin/myos.bin -ffreestanding -O2 -nostdlib obj/boot.o obj/kernel.o -lgcc
@@ -19,4 +20,4 @@ clean:
 	rm *.bin
 
 run: myos.bin
-	qemu-system-i386 -kernel bin/myos.bin
+	qemu-system-i386 -kernel bin/myos.bin || qemu-system-i386.exe -kernel bin/myos.bin
