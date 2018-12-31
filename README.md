@@ -1,1 +1,7 @@
-yeah
+# RealOS
+RealOS is my first operating system project. I always thought it would be pretty cool to write my own kernel, and make use of the hardware I have in ways that wouldn't be possible without writing your own kernel. Right now, I plan on just making a simple DOS clone, but once that's done I'm going to try and expand it a little. 
+
+The goal is to make an operating system that can turn into a real-time operating system on demand. So for example, if you launch a game, you don't want your game being preempted by an unrelated program, as that would cause latency. Or, if you have a program that cannot live in the same space as others (such as a piece of auto-overclocking software), you can launch it in real time mode. Obviously this is still a while away, but I think it's a pretty cool idea.
+
+# Running
+Honestly, running this program is a bit difficult. What I reccomend is to follow [this tutorial](https://wiki.osdev.org/GCC_Cross-Compiler), as you can't compile the code without a cross compiler. Then, once that's done just run make and you should be good. If you would actually like the run the program you can just run `make run`, and as long as qemu is in your path, it should run just fine. It's a bit of a complicated process, and may take an hour or two to figure out, so if you have any trouble feel free to contact me. If enough people request it though, I can start providing some pre-built binaries.
